@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AAPL Stock Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>AAPL AI</h2>
+  <ul>
+    <li class="active">Dashboard</li>
+    <li>Overview</li>
+    <li>Prediction</li>
+    <li>Graphs</li>
+    <li>Model Metrics</li>
+    <li>SHAP Analysis</li>
+    <li>Reports</li>
+    <li>Settings</li>
+  </ul>
+</div>
+
+<div class="main">
+
+<div class="header">
+  <div>
+    <h1>Stock Market Prediction Dashboard</h1>
+    <p>Apple Inc. (AAPL) | LSTM + GRU + Deep LSTM + Ensemble + SHAP</p>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <h4>Current Price</h4>
+    <h2 id="currentPrice">$178.32</h2>
+  </div>
+
+  <div class="card">
+    <h4>Predicted Price</h4>
+    <h2 id="predictedPrice">$0</h2>
+  </div>
+
+  <div class="card">
+    <h4>RMSE</h4>
+    <h2 id="rmse">0</h2>
+  </div>
+
+  <div class="card">
+    <h4>R² Score</h4>
+    <h2 id="r2">0</h2>
+  </div>
+</div>
+
+<div class="prediction">
+  <input id="days" type="number" placeholder="Enter number of days">
+  <button onclick="predict()">Predict</button>
+  <div id="output" class="output">$0</div>
+</div>
+
+<div class="graphs">
+  <div class="graph-card" onclick="openPopup('Stock Price Trend')">Stock Price Trend</div>
+  <div class="graph-card" onclick="openPopup('Future Forecast')">Future Forecast</div>
+</div>
+
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span onclick="closePopup()">✖</span>
+    <h2 id="popup-title"></h2>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
